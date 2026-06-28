@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Cloud Network Guardian
 
 Cloud Network Guardian is a Python-based Azure network security audit tool designed to detect risky cloud networking configurations, especially insecure Network Security Group (NSG) rules.
