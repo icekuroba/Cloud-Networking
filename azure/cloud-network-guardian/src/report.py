@@ -77,4 +77,3 @@ def generate_csv_report(findings, output_path):
 
         for finding in findings:
             writer.writerow(finding)
-EOF
