@@ -145,4 +145,3 @@ def count_by_severity(findings):
         summary[severity] = summary.get(severity, 0) + 1
 
     return summary
-EOF
