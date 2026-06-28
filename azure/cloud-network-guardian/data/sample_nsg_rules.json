@@ -6,7 +6,8 @@
     "port": "22",
     "protocol": "TCP",
     "action": "Allow",
-    "direction": "Inbound"
+    "direction": "Inbound",
+    "description": "Allows SSH access from anywhere"
   },
   {
     "name": "AllowHTTP",
@@ -15,7 +16,18 @@
     "port": "80",
     "protocol": "TCP",
     "action": "Allow",
-    "direction": "Inbound"
+    "direction": "Inbound",
+    "description": "Allows public HTTP traffic"
+  },
+  {
+    "name": "AllowHTTPS",
+    "source": "Internet",
+    "destination": "*",
+    "port": "443",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound",
+    "description": "Allows public HTTPS traffic"
   },
   {
     "name": "AllowRDPFromInternet",
@@ -24,15 +36,48 @@
     "port": "3389",
     "protocol": "TCP",
     "action": "Allow",
-    "direction": "Inbound"
+    "direction": "Inbound",
+    "description": "Allows RDP access from anywhere"
   },
   {
-    "name": "AllowPostgreSQL",
+    "name": "AllowPostgreSQLPublic",
     "source": "0.0.0.0/0",
     "destination": "*",
     "port": "5432",
     "protocol": "TCP",
     "action": "Allow",
-    "direction": "Inbound"
+    "direction": "Inbound",
+    "description": "Allows public PostgreSQL access"
+  },
+  {
+    "name": "AllowMySQLPublic",
+    "source": "Any",
+    "destination": "*",
+    "port": "3306",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound",
+    "description": "Allows public MySQL access"
+  },
+  {
+    "name": "AllowSSHFromAdminIP",
+    "source": "189.203.10.25/32",
+    "destination": "*",
+    "port": "22",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound",
+    "description": "Allows SSH only from a trusted admin IP"
+  },
+  {
+    "name": "DenyAllInbound",
+    "source": "*",
+    "destination": "*",
+    "port": "*",
+    "protocol": "*",
+    "action": "Deny",
+    "direction": "Inbound",
+    "description": "Default deny inbound rule"
   }
 ]
+EOF
