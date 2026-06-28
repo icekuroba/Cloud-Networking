@@ -69,7 +69,7 @@ if findings:
 
     filtered_df = df[df["severity"].isin(severity_filter)]
 
-    sst.dataframe(filtered_df, width="stretch")
+    st.dataframe(filtered_df, width="stretch")
 
     csv_buffer = StringIO()
     filtered_df.to_csv(csv_buffer, index=False)
