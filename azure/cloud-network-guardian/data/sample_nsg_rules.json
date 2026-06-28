@@ -1,0 +1,38 @@
+[
+  {
+    "name": "AllowSSHFromInternet",
+    "source": "0.0.0.0/0",
+    "destination": "*",
+    "port": "22",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound"
+  },
+  {
+    "name": "AllowHTTP",
+    "source": "Internet",
+    "destination": "*",
+    "port": "80",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound"
+  },
+  {
+    "name": "AllowRDPFromInternet",
+    "source": "0.0.0.0/0",
+    "destination": "*",
+    "port": "3389",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound"
+  },
+  {
+    "name": "AllowPostgreSQL",
+    "source": "0.0.0.0/0",
+    "destination": "*",
+    "port": "5432",
+    "protocol": "TCP",
+    "action": "Allow",
+    "direction": "Inbound"
+  }
+]
